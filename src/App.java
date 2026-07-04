@@ -28,9 +28,13 @@ public class App {
 	this.listaArray.agregarElemento("Estudiante_A");
 	imprimirLista();
 
-	System.ou.println("\n ---listaArray.agregarPosicion(\Estudiante_B, 1\) ---");
+	System.out.println("\n ---listaArray.agregarPosicion(\Estudiante_B, 1\) ---");
 	this.listaArray.agregarPosicion("Estudiante_B", 1);
 	imprimirLista();
+
+	System.out.println("\n ---listaArray.consultar(2) ---");
+	String consultado = this.listaArray.consultar(2);
+	System.ou.println("El elemento obtenido del indice 2 es: " + consultado);
 
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
