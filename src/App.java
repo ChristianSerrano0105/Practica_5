@@ -1,7 +1,7 @@
 public class App {
 
 	//Creando una composicion
-	private ArrayList <String> ListaArray;
+	private ArrayList<String> listaArray;
 
 	//Constructor, inicializando el objeto ListaArray al crear la App
 	public App(){
@@ -16,11 +16,15 @@ public class App {
 	System.out.println("La lista esta vacia? " + this.listaArray.esVacia());
 	imprimirLista();
 
+	System.out.println("\n ---listaArray.agregarInicio(\Universidad\) ---");
+	this.listaArray.agregarInicio("Universidad");
+	imprimirLista();
+	
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
-		for (int i = 0; i < this.ListaArray.numElementos(); i++){
-		System.out.print(this.ListaArray.consultar(i));
-			if (i < this.ListaArray.numElementos() - 1){
+		for (int i = 0; i < this.listaArray.numElementos(); i++){
+		System.out.print(this.listaArray.consultar(i));
+			if (i < this.listaArray.numElementos() - 1){
 				System.out.print(" | ");
 			}
 		}

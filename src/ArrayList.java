@@ -120,7 +120,8 @@ public class ArrayList<E> implements Lista<E> {
 	return eliminarElementoFinal();
     }
 
-    @Override E eliminarElementoInicio(){
+    @Override 
+	public E eliminarElementoInicio(){
 	if (esVacia()) return null;
 
 	@SuppressWarnings("unchecked")
