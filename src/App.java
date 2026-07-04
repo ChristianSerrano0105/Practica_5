@@ -34,7 +34,12 @@ public class App {
 
 	System.out.println("\n ---listaArray.consultar(2) ---");
 	String consultado = this.listaArray.consultar(2);
-	System.ou.println("El elemento obtenido del indice 2 es: " + consultado);
+	System.out.println("El elemento obtenido del indice 2 es: " + consultado);
+
+	System.out.println("\n ---listaArray.eliminarElementoInicio() ---");
+	String eliminadoInicio = this.listaArray.eliminarElementoInicio();
+	System.out.println("Se elimino: " + eliminadoInicio);
+	imprimirLista();
 
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
