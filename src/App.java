@@ -19,7 +19,11 @@ public class App {
 	System.out.println("\n ---listaArray.agregarInicio(\Universidad\) ---");
 	this.listaArray.agregarInicio("Universidad");
 	imprimirLista();
-	
+
+	System.out.println("\n ---listaArray.agregarFinal(\Trabajador\) ---");
+	this.listaArray.agregarFinal("Trabajador");
+	imprimirLista;
+
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
 		for (int i = 0; i < this.listaArray.numElementos(); i++){
