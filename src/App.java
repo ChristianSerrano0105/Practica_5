@@ -24,8 +24,12 @@ public class App {
 	this.listaArray.agregarFinal("Trabajador");
 	imprimirLista;
 
-	System.out.println("\n ---listaArray.agregarElemento(\Estudiante\) ---");
-	this.listaArray.agregarElemento("Estudiante");
+	System.out.println("\n ---listaArray.agregarElemento(\Estudiante_A\) ---");
+	this.listaArray.agregarElemento("Estudiante_A");
+	imprimirLista();
+
+	System.ou.println("\n ---listaArray.agregarPosicion(\Estudiante_B, 1\) ---");
+	this.listaArray.agregarPosicion("Estudiante_B", 1);
 	imprimirLista();
 
 	private void imprimirLista(){
