@@ -86,6 +86,23 @@ public class ArrayList<E> implements Lista<E> {
         indice++;
     }
 
+    @Override
+    public void agregarPosicion(E e, int posicion){
+    if (posicion < 0 || posicion > indice){
+	throw new IndexOutOfBoundsException("posicion fuera de rango: " + posicion);
+    }
+    if (indice >= datos.length) {
+	Object[] aux = new Object[datos.length + datos.length / 2 + 1];
+	System.arraycopy(datos, 0, aux, 0, posicion);
+	System.arraycopy(datos, posicion, aux, posicion + 1, indice - posicion);
+	asegurarGC();
+	datos = aux;
+    } else {
+	System.arraycopy(datos, posicion, datos, posicion + 1, indice - posicion);
+    }
+    datos[posicion] = e;
+    indice++;
+    }
     // Indica si la lista esta vacia.
     @Override
     public boolean esVacia() {
