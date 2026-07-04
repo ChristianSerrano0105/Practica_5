@@ -162,14 +162,21 @@ public class ArrayList<E> implements Lista<E> {
     // Limpia la lista.
     @Override
     public void limpiarLista() {
-
-        // Reinicia el contador de elementos.
-        indice = 0;
-
         // Borra las referencias de los objetos almacenados.
         asegurarGC();
+	//Reinicia el contador de elementos
+	indice = 0;
     }
 
+    @Override
+    public E consultar(int posicion){
+	if (posicion < 0 || posicion >= indice){
+		throw new IndexOutOfBoundsException("Posicion fuera de rango:" + posicion);
+	}
+	@SuppressWarnings("unchecked")
+	E elemento = (E) datos[posicion];
+	return elemento;
+    }
     //Un Iterator : Permite recorrer la lista usando un Iterator.
         // Un Iterator es un objeto que permite recorrer una colección
     // elemento por elemento, sin necesidad de acceder directamente
