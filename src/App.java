@@ -41,6 +41,11 @@ public class App {
 	System.out.println("Se elimino: " + eliminadoInicio);
 	imprimirLista();
 
+	System.out.println("\n ---listaArray.EliminarElementoFinal() ---");
+	String eliminadoFinal = this.listaArray.eliminarElementoFinal();
+	System.out.println("Se elimino: " + eliminadoFinal);
+	imprimirLista();
+
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
 		for (int i = 0; i < this.listaArray.numElementos(); i++){
