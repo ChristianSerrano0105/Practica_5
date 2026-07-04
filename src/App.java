@@ -51,6 +51,13 @@ public class App {
 	System.out.println("Se elimino el indice 0 que era: " + eliminadoPosicion);
 	imprimrLista();
 
+	System.out.println("\n---listaArray.limpiarLista() ---");
+	this.listaArray.limpiarLista();
+	System.out.println("La lista esta vacia ahora?" + this.listaArray.esVacia());
+	System.out.println("Numero de elementos: " + this.listaArray.numElementos());
+	imprimirLista();
+
+	}
 	private void imprimirLista(){
 	System.out.print("Estado de la lista: [ ");
 		for (int i = 0; i < this.listaArray.numElementos(); i++){
