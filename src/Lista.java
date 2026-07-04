@@ -62,5 +62,5 @@ public interface Lista<E> extends Iterable<E> {
 	 * @param posicion Posicion del elemento a regresar
 	 */
 	public E consultar(int posicion);
-	
+
 }

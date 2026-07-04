@@ -114,10 +114,24 @@ public class ArrayList<E> implements Lista<E> {
 	datos[indice] = null;
 	return eliminado;
     }
+
     @Override
     public E eliminarElemento() {
 	return eliminarElementoFinal();
     }
+
+    @Override E eliminarElementoInicio(){
+	if (esVacia()) return null;
+
+	@SuppressWarnings("unchecked")
+	E eliminado = (E) datos [0];
+	System.arraycopy(datos, 1, datos, 0, indice - 1);
+	indice--;
+	datos[indice] = null;
+
+	return eliminado;
+    }
+
     // Indica si la lista esta vacia.
     @Override
     public boolean esVacia() {
