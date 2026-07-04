@@ -63,4 +63,5 @@ public interface Lista<E> extends Iterable<E> {
 	 */
 	public E consultar(int posicion);
 
+	//public E[] convertirArreglo();
 }
