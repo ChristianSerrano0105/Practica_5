@@ -7,10 +7,8 @@ public class ArrayList<E> implements Lista<E> {
 
     // Tamanio maximo inicial por defecto del arreglo
     private static final int MAX = 5;
-
     // Indica cuantos elementos tiene actualmente la lista
     private int indice = 0;
-
     // Arreglo donde se almacenan los datos
     private Object[] datos = null; 
 
@@ -22,10 +20,9 @@ public class ArrayList<E> implements Lista<E> {
 
     // Constructor que permite indicar el tamanio inicial del arreglo.
     public ArrayList(int tam) {
-
         // Si el tamanio es negativo, se lanza una excepcion.
         if (tam < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("El tamanio no puede ser negativo");
         }
 
         // Se crea el arreglo con el tamanio indicado.
@@ -40,31 +37,28 @@ public class ArrayList<E> implements Lista<E> {
         }
     }
 
+    @Override
+    public void agregarElemento(E e){
+	agregarFinal(e);
+    }
+
     // Agrega un elemento al final de la lista.
     @Override
     public void agregarFinal(E e) {
-
         Object[] aux = null;
-
         // Si el arreglo ya casi esta lleno, se crea uno mas grande.
         if (!(indice < datos.length - 1)) {
-
             // Nuevo arreglo con crecimiento del 50%.
-            aux = new Object[datos.length + datos.length / 2];
-
+            aux = new Object[datos.length + datos.length / 2 + 1];
             // Copia los datos del arreglo viejo al nuevo.
             System.arraycopy(datos, 0, aux, 0, datos.length);
-
             // Limpia las referencias del arreglo anterior.
             asegurarGC();
-
             // El arreglo principal ahora apunta al arreglo nuevo.
             datos = aux;
         }
-
         // Se guarda el elemento en la posicion actual.
         datos[indice] = e;
-
         // Se incrementa el numero de elementos.
         indice++;
     }
@@ -72,33 +66,22 @@ public class ArrayList<E> implements Lista<E> {
     // Agrega un elemento al inicio de la lista.
     @Override
     public void agregarInicio(E e) {
-
         Object[] auxobj = null;
-
-        // Imprime el numero actual de elementos.
-        System.out.println(indice);
-
         // Si todavia hay espacio, recorre los elementos una posicion a la derecha.
         if (indice < datos.length - 1) {
-            System.arraycopy(datos, 0, datos, 1, indice + 1);
+            System.arraycopy(datos, 0, datos, 1, indice);
         } else {
-
             // Si no hay espacio, crea un arreglo mas grande.
-            auxobj = new Object[datos.length + datos.length / 2];
-
+            auxobj = new Object[datos.length + datos.length / 2 + 1];
             // Copia los elementos al nuevo arreglo desde la posicion 1.
             System.arraycopy(datos, 0, auxobj, 1, datos.length);
-
             // Limpia las referencias del arreglo anterior.
             asegurarGC();
-
             // El arreglo principal ahora apunta al arreglo nuevo.
             datos = auxobj;
         }
-
         // Coloca el nuevo elemento al inicio.
         datos[0] = e;
-
         // Aumenta el contador de elementos.
         indice++;
     }
