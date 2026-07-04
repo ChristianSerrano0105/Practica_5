@@ -132,6 +132,21 @@ public class ArrayList<E> implements Lista<E> {
 	return eliminado;
     }
 
+    @Override
+    public E eliminarElementoPosicion(int posicion){
+	if (posicion < 0 || posicion >= indice){
+		throw new IndexOutOfBoundsException("Posicion fuera de rango:" + posicion);
+	}
+
+	@SuppressWarnings("unchecked")
+	E eliminado = (E) datos[posicion];
+	System.arraycopy(datos, posicion + 1, datos, posicion, indice - posicion - 1);
+	indice--;
+	datos[indice] = null;
+
+	return eliminado;
+    }
+
     // Indica si la lista esta vacia.
     @Override
     public boolean esVacia() {
