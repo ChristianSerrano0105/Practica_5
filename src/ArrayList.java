@@ -103,6 +103,21 @@ public class ArrayList<E> implements Lista<E> {
     datos[posicion] = e;
     indice++;
     }
+
+    @Override
+    public E eliminarElementoFinal() {
+	if (esVacia()) return null;
+
+	indice--;
+	@SuppressWarnings("unchecked")
+	E eliminado = (E) datos [indice];
+	datos[indice] = null;
+	return eliminado;
+    }
+    @Override
+    public E eliminarElemento() {
+	return eliminarElementoFinal();
+    }
     // Indica si la lista esta vacia.
     @Override
     public boolean esVacia() {
