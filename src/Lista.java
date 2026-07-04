@@ -57,12 +57,6 @@ public interface Lista<E> extends Iterable<E> {
 	 * Elimina todos los elementos de la lista
 	 */
 	public void  limpiarLista();
-
-	/**
-	 * Regresa la coleccion como un arreglo
-	 */
-	public E[]  convertirArreglo();
-	
 	/**
 	 * Regresa el elemento en una posicion particular
 	 * @param posicion Posicion del elemento a regresar
